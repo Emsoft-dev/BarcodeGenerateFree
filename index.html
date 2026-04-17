@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Barcode Generator & QR Code Generator | Barcode Designer</title>
+  <meta
+    name="description"
+    content="Free barcode generator and QR code generator for fast single-code creation in the browser. Part of the Barcode Designer workflow for reusable templates and print-ready label operations."
+  >
+  <meta
+    name="keywords"
+    content="free barcode generator, free qr code generator, barcode generator, qr code generator, barcode design, bardecode design, qr code design, single barcode generator, barcode designer"
+  >
+  <meta name="application-name" content="Barcode Designer Free Generator">
+  <meta name="category" content="productivity">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no, address=no, email=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Barcode Designer">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta property="og:title" content="Free Barcode Generator & QR Code Generator | Barcode Designer">
+  <meta property="og:description" content="Free barcode generator and QR code generator for fast single-code creation in the browser. Connected with Barcode Designer for reusable templates and print-ready workflows.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Barcode Designer">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://barcodes.design/opengraph-image">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Free Barcode Generator and QR Code Generator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Barcode Generator & QR Code Generator | Barcode Designer">
+  <meta name="twitter:description" content="Free barcode generator and QR code generator for fast single-code creation in the browser. Connected with Barcode Designer for reusable templates and print-ready workflows.">
+  <meta name="twitter:image" content="https://barcodes.design/opengraph-image">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Barcode Designer Free Generator",
+          "url": "https://barcodes.design/",
+          "inLanguage": ["en"],
+          "description": "Free barcode generator and QR code generator for fast single-code creation in the browser."
+        },
+        {
+          "@type": "WebPage",
+          "name": "Free Barcode Generator & QR Code Generator",
+          "description": "Free barcode generator and QR code generator for fast single-code creation in the browser. Connected with Barcode Designer for reusable templates and print-ready workflows.",
+          "inLanguage": ["en"],
+          "about": {
+            "@type": "SoftwareApplication",
+            "name": "Barcode Designer",
+            "url": "https://barcodes.design/"
+          },
+          "relatedLink": ["https://barcodes.design/"]
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Free Barcode Generator & QR Code Generator",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Any",
+          "browserRequirements": "Requires JavaScript",
+          "isAccessibleForFree": true,
+          "featureList": [
+            "Single barcode generation",
+            "Single QR code generation",
+            "PNG download",
+            "Browser-based workflow"
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "Barcode Designer",
+            "url": "https://barcodes.design/"
+          },
+          "sameAs": ["https://barcodes.design/"]
+        }
+      ]
+    }
+  </script>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --bg-accent: #efe5d2;
+      --panel: rgba(255, 250, 241, 0.88);
+      --panel-strong: #fff9ef;
+      --text: #1f1d1a;
+      --muted: #6a6255;
+      --line: rgba(60, 44, 20, 0.12);
+      --brand: #0f766e;
+      --brand-dark: #0b4f4a;
+      --warm: #c96f3b;
+      --shadow: 0 24px 80px rgba(59, 39, 10, 0.14);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.14), transparent 30%),
+        radial-gradient(circle at right 20%, rgba(201, 111, 59, 0.15), transparent 24%),
+        linear-gradient(135deg, var(--bg), #f9f4ea 42%, var(--bg-accent));
+      min-height: 100vh;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(255, 250, 241, 0.94), rgba(255, 247, 233, 0.86));
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -100px auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(201, 111, 59, 0.18));
+      filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.08);
+      color: var(--brand-dark);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Trebuchet MS", "Avenir Next", "Segoe UI", sans-serif;
+      line-height: 1.02;
+    }
+
+    h1 {
+      max-width: 740px;
+      margin-top: 18px;
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .hero-tags span,
+    .hero-tags a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(31, 29, 26, 0.05);
+      color: var(--text);
+      font-size: 0.94rem;
+      text-decoration: none;
+    }
+
+    .hero-tags a {
+      background: rgba(15, 118, 110, 0.12);
+      color: var(--brand-dark);
+      font-weight: 700;
+      transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+    }
+
+    .hero-tags a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(15, 118, 110, 0.14);
+      background: rgba(15, 118, 110, 0.18);
+    }
+
+    .hero-notes {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.52);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-notes h3 {
+      margin-bottom: 10px;
+    }
+
+    .hero-notes p,
+    .hero-notes li {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .hero-notes ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(16px);
+    }
+
+    .controls {
+      padding: 28px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .section-header p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .field,
+    .field-wide {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field-wide {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.96rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: var(--radius-sm);
+      padding: 13px 14px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+      transition: border-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(15, 118, 110, 0.6);
+      box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.08);
+      transform: translateY(-1px);
+    }
+
+    textarea {
+      min-height: 124px;
+      resize: vertical;
+    }
+
+    input[type="color"] {
+      min-height: 48px;
+      padding: 6px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    input[type="color"]::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    input[type="color"]::-webkit-color-swatch {
+      border: none;
+      border-radius: 10px;
+    }
+
+    input[type="color"]::-moz-color-swatch {
+      border: none;
+      border-radius: 10px;
+    }
+
+    .inline-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .toggle-field {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .toggle-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 50px;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: var(--radius-sm);
+    }
+
+    .toggle-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .switch {
+      position: relative;
+      display: inline-flex;
+      width: 54px;
+      height: 32px;
+      flex: 0 0 auto;
+    }
+
+    .switch input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      margin: 0;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: rgba(31, 29, 26, 0.16);
+      transition: background 150ms ease;
+    }
+
+    .slider::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+      transition: transform 150ms ease;
+    }
+
+    .switch input:checked + .slider {
+      background: linear-gradient(135deg, var(--brand), #159b90);
+    }
+
+    .switch input:checked + .slider::before {
+      transform: translateX(22px);
+    }
+
+    .switch input:disabled + .slider {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .preview-actions {
+      margin-top: 0;
+      margin-bottom: -2px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    button,
+    .link-button {
+      appearance: none;
+      border: none;
+      border-radius: 999px;
+      padding: 13px 18px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+    }
+
+    button:hover,
+    .link-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(15, 118, 110, 0.16);
+    }
+
+    .primary {
+      background: linear-gradient(135deg, var(--brand), #159b90);
+      color: white;
+    }
+
+    .secondary {
+      background: rgba(15, 118, 110, 0.08);
+      color: var(--brand-dark);
+    }
+
+    .link-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .preview-actions button {
+      width: 100%;
+    }
+
+    .accent {
+      background: linear-gradient(135deg, var(--warm), #de8a43);
+      color: white;
+    }
+
+    .preview {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .preview-stage {
+      display: grid;
+      place-items: center;
+      min-height: 390px;
+      background:
+        linear-gradient(45deg, rgba(31, 29, 26, 0.03) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(31, 29, 26, 0.03) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(31, 29, 26, 0.03) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(31, 29, 26, 0.03) 75%);
+      background-size: 22px 22px;
+      background-position: 0 0, 0 11px, 11px -11px, -11px 0;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .preview-art {
+      width: min(100%, 340px);
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      border-radius: 24px;
+      background: white;
+      box-shadow: 0 18px 40px rgba(31, 29, 26, 0.12);
+      animation: floatIn 480ms ease;
+    }
+
+    .preview-placeholder {
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .preview-art canvas,
+    .preview-art svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .preview-meta {
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.64);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 20px;
+    }
+
+    .preview-meta p {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .status {
+      margin-top: 16px;
+      min-height: 24px;
+      color: var(--brand-dark);
+      font-weight: 600;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer a {
+      color: var(--brand-dark);
+    }
+
+    .seo-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .seo-links a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.08);
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 20px, 1180px);
+        padding-top: 18px;
+      }
+
+      .hero,
+      .controls,
+      .preview,
+      .gallery {
+        padding: 20px;
+      }
+
+      .field-grid,
+      .inline-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-actions {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 12vw, 3.4rem);
+      }
+
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="layout">
+      <div class="card controls">
+        <div class="section-header">
+          <div>
+            <h2>Generator Controls</h2>
+            <p>Choose a code type, style it, then preview and save instantly.</p>
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="field">
+            <label for="codeType">Code Type</label>
+            <select id="codeType">
+              <option value="qr">QR Code</option>
+              <option value="CODE128">Barcode · CODE128</option>
+              <option value="EAN13">Barcode · EAN-13</option>
+              <option value="UPC">Barcode · UPC</option>
+              <option value="ITF14">Barcode · ITF-14</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="fileName">File Name</label>
+            <input id="fileName" type="text" value="free-code-design" placeholder="custom file name">
+          </div>
+
+          <div class="field-wide">
+            <label for="contentInput">Content</label>
+            <textarea id="contentInput" placeholder="Enter any text, link, number, or product code">https://barcodes.design</textarea>
+          </div>
+        </div>
+
+        <div class="inline-grid">
+          <div class="field">
+            <label for="foreground">Foreground</label>
+            <input id="foreground" type="color" value="#111111">
+          </div>
+          <div class="field">
+            <label for="background">Background</label>
+            <input id="background" type="color" value="#ffffff">
+          </div>
+          <div class="field">
+            <label for="size">Size</label>
+            <input id="size" type="number" min="160" max="1200" step="20" value="320">
+          </div>
+        </div>
+
+        <div class="inline-grid">
+          <div class="field">
+            <label for="margin">Margin</label>
+            <input id="margin" type="number" min="0" max="40" step="1" value="16">
+          </div>
+          <div class="field">
+            <label for="barWidth">Bar Width</label>
+            <input id="barWidth" type="number" min="1" max="6" step="1" value="2">
+          </div>
+          <div class="field toggle-field">
+            <label for="showText">Barcode Text</label>
+            <div class="toggle-wrap">
+              <span class="toggle-text" id="showTextLabel">Show</span>
+              <label class="switch" for="showText" aria-label="Toggle barcode text">
+                <input id="showText" type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="primary" id="generateBtn">Generate Preview</button>
+          <a class="accent link-button" href="https://barcodes.design" target="_blank" rel="noreferrer">Advanced Features</a>
+        </div>
+
+        <div class="status" id="statusText" aria-live="polite"></div>
+      </div>
+
+      <div class="card preview">
+        <div class="section-header">
+          <div>
+            <h2>Live Preview</h2>
+            <p>Rendered on-device for quick sharing and publishing.</p>
+          </div>
+        </div>
+
+        <div class="preview-stage">
+          <div class="preview-art" id="previewArt"></div>
+        </div>
+
+        <div class="actions preview-actions">
+          <button class="secondary" id="downloadBtn">Save Current PNG</button>
+        </div>
+
+        <div class="preview-meta" id="previewMeta">
+          <h3>Current Output</h3>
+          <p>Generate a preview to see file details and content summary.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="hero" style="margin-top: 24px;">
+      <span class="eyebrow">Free • Barcode Design • QR Code Design</span>
+      <h1>Make clean barcode and QR code designs right in the browser.</h1>
+      <p class="hero-copy">
+        Generate single codes and save high-quality images instantly.
+        This lightweight page is built for fast sharing on GitHub Pages and works without any backend.
+      </p>
+      <div class="hero-tags">
+        <span>Free to use</span>
+        <span>QR + Barcode</span>
+        <span>GitHub Pages friendly</span>
+      </div>
+      <div class="hero-notes">
+        <h3>Good To Know</h3>
+        <ul>
+          <li>QR Code works well for links, text, and flexible content.</li>
+          <li>Barcodes require format-safe numeric content for some standards like EAN-13 and UPC.</li>
+          <li>Downloaded files are saved as PNG images and work well for quick sharing.</li>
+        </ul>
+        <div class="seo-links">
+          <a href="https://barcodes.design/" target="_blank" rel="noopener noreferrer">Official Barcode Designer</a>
+          <a href="https://barcodes.design/#features" target="_blank" rel="noopener noreferrer">Barcode Designer Features</a>
+          <a href="https://barcodes.design/#faq" target="_blank" rel="noopener noreferrer">Barcode Designer FAQ</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top: 24px; padding: 28px;">
+      <div class="footer" style="margin-top: 0;">
+        <span>Built as a static site for direct GitHub deployment.</span>
+        <a href="https://pages.github.com/" target="_blank" rel="noreferrer">GitHub Pages</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const elements = {
+      codeType: document.getElementById("codeType"),
+      fileName: document.getElementById("fileName"),
+      contentInput: document.getElementById("contentInput"),
+      foreground: document.getElementById("foreground"),
+      background: document.getElementById("background"),
+      size: document.getElementById("size"),
+      margin: document.getElementById("margin"),
+      barWidth: document.getElementById("barWidth"),
+      showText: document.getElementById("showText"),
+      showTextLabel: document.getElementById("showTextLabel"),
+      generateBtn: document.getElementById("generateBtn"),
+      downloadBtn: document.getElementById("downloadBtn"),
+      previewArt: document.getElementById("previewArt"),
+      previewMeta: document.getElementById("previewMeta"),
+      statusText: document.getElementById("statusText")
+    };
+
+    let currentRender = null;
+    let librariesLoaded = false;
+    let previewRefreshTimer = null;
+    let previewRequestId = 0;
+
+    const librarySources = [
+      {
+        test: () => typeof window.QRious !== "undefined",
+        urls: [
+          "./assets/vendor/qrious.min.js",
+          "https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"
+        ]
+      },
+      {
+        test: () => typeof window.JsBarcode !== "undefined",
+        urls: [
+          "./assets/vendor/JsBarcode.all.min.js",
+          "https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js",
+          "https://unpkg.com/jsbarcode@3.11.6/dist/JsBarcode.all.min.js",
+          "https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"
+        ]
+      },
+    ];
+
+    function setStatus(message, isError = false) {
+      elements.statusText.textContent = message;
+      elements.statusText.style.color = isError ? "#a33f1f" : "var(--brand-dark)";
+    }
+
+    function setPreviewPlaceholder(message) {
+      elements.previewArt.innerHTML = `<div class="preview-placeholder">${message}</div>`;
+    }
+
+    function setPreviewLoading(message) {
+      elements.previewMeta.innerHTML = `
+        <h3>Current Output</h3>
+        <p>${message}</p>
+      `;
+    }
+
+    function syncShowTextLabel() {
+      elements.showTextLabel.textContent = elements.showText.checked ? "Show" : "Hide";
+    }
+
+    function loadScript(url) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = url;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+
+    async function ensureLibraries() {
+      if (librariesLoaded) {
+        return;
+      }
+
+      setPreviewPlaceholder("Loading generator libraries...");
+
+      for (const lib of librarySources) {
+        if (lib.test()) {
+          continue;
+        }
+
+        let loaded = false;
+        for (const url of lib.urls) {
+          try {
+            await loadScript(url);
+            if (lib.test()) {
+              loaded = true;
+              break;
+            }
+          } catch (error) {
+            continue;
+          }
+        }
+
+        if (!loaded) {
+          throw new Error("Generator libraries could not be loaded from CDN.");
+        }
+      }
+
+      librariesLoaded = true;
+    }
+
+    function sanitizeFileName(name) {
+      return (name || "free-code-design")
+        .trim()
+        .replace(/[<>:"/\\|?*\u0000-\u001F]/g, "-")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, "") || "free-code-design";
+    }
+
+    function validateBarcodeContent(format, value) {
+      const content = value.trim();
+      if (!content) {
+        throw new Error("Content cannot be empty.");
+      }
+      if (format === "EAN13" && !/^\d{12,13}$/.test(content)) {
+        throw new Error("EAN-13 needs 12 or 13 digits.");
+      }
+      if (format === "UPC" && !/^\d{11,12}$/.test(content)) {
+        throw new Error("UPC needs 11 or 12 digits.");
+      }
+      if (format === "ITF14" && !/^\d{14}$/.test(content)) {
+        throw new Error("ITF-14 needs exactly 14 digits.");
+      }
+      return content;
+    }
+
+    function findCanvasBounds(canvas, background) {
+      const ctx = canvas.getContext("2d");
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+      const bg = hexToRgb(background || "#ffffff");
+
+      let minX = canvas.width;
+      let minY = canvas.height;
+      let maxX = -1;
+      let maxY = -1;
+
+      for (let y = 0; y < canvas.height; y += 1) {
+        for (let x = 0; x < canvas.width; x += 1) {
+          const index = (y * canvas.width + x) * 4;
+          const r = imageData[index];
+          const g = imageData[index + 1];
+          const b = imageData[index + 2];
+          const a = imageData[index + 3];
+          const isBackground = a === 0 || (
+            Math.abs(r - bg.r) < 8 &&
+            Math.abs(g - bg.g) < 8 &&
+            Math.abs(b - bg.b) < 8
+          );
+
+          if (!isBackground) {
+            minX = Math.min(minX, x);
+            minY = Math.min(minY, y);
+            maxX = Math.max(maxX, x);
+            maxY = Math.max(maxY, y);
+          }
+        }
+      }
+
+      if (maxX < 0 || maxY < 0) {
+        return null;
+      }
+
+      return {
+        x: minX,
+        y: minY,
+        width: maxX - minX + 1,
+        height: maxY - minY + 1
+      };
+    }
+
+    function hexToRgb(hex) {
+      const clean = hex.replace("#", "");
+      const value = clean.length === 3
+        ? clean.split("").map((char) => char + char).join("")
+        : clean;
+
+      return {
+        r: parseInt(value.slice(0, 2), 16),
+        g: parseInt(value.slice(2, 4), 16),
+        b: parseInt(value.slice(4, 6), 16)
+      };
+    }
+
+    function centerQrCanvas(sourceCanvas, size, background) {
+      const bounds = findCanvasBounds(sourceCanvas, background);
+      if (!bounds) {
+        return sourceCanvas;
+      }
+
+      const centeredCanvas = document.createElement("canvas");
+      centeredCanvas.width = size;
+      centeredCanvas.height = size;
+
+      const ctx = centeredCanvas.getContext("2d");
+      ctx.fillStyle = background || "#ffffff";
+      ctx.fillRect(0, 0, size, size);
+
+      const offsetX = Math.round((size - bounds.width) / 2);
+      const offsetY = Math.round((size - bounds.height) / 2);
+
+      ctx.drawImage(
+        sourceCanvas,
+        bounds.x,
+        bounds.y,
+        bounds.width,
+        bounds.height,
+        offsetX,
+        offsetY,
+        bounds.width,
+        bounds.height
+      );
+
+      return centeredCanvas;
+    }
+
+    async function renderCode({ type, content, size, foreground, background, margin, barWidth, showText }) {
+      if (type === "qr") {
+        const rawCanvas = document.createElement("canvas");
+        const qr = new QRious({
+          element: rawCanvas,
+          value: content,
+          size,
+          level: "M",
+          padding: margin,
+          foreground,
+          background
+        });
+        qr.set({
+          value: content,
+          size,
+          padding: margin,
+          foreground,
+          background
+        });
+        const canvas = centerQrCanvas(rawCanvas, size, background);
+        return { node: canvas, dataUrl: canvas.toDataURL("image/png") };
+      }
+
+      const validContent = validateBarcodeContent(type, content);
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      JsBarcode(svg, validContent, {
+        format: type,
+        lineColor: foreground,
+        background,
+        width: barWidth,
+        height: Math.max(80, Math.round(size * 0.42)),
+        margin,
+        displayValue: showText,
+        fontOptions: "bold",
+        font: "monospace"
+      });
+      const dataUrl = await svgToPngDataUrl(svg, background);
+      return { node: svg, dataUrl };
+    }
+
+    async function svgToPngDataUrl(svg, background) {
+      const source = new XMLSerializer().serializeToString(svg);
+      const blob = new Blob([source], { type: "image/svg+xml;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const image = new Image();
+      const width = Number(svg.getAttribute("width")) || 640;
+      const height = Number(svg.getAttribute("height")) || 240;
+
+      await new Promise((resolve, reject) => {
+        image.onload = resolve;
+        image.onerror = reject;
+        image.src = url;
+      });
+
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = background || "#ffffff";
+      ctx.fillRect(0, 0, width, height);
+      ctx.drawImage(image, 0, 0);
+      URL.revokeObjectURL(url);
+      return canvas.toDataURL("image/png");
+    }
+
+    function cloneRenderedNode(node) {
+      if (node instanceof HTMLCanvasElement) {
+        const copy = document.createElement("canvas");
+        copy.width = node.width;
+        copy.height = node.height;
+        copy.getContext("2d").drawImage(node, 0, 0);
+        return copy;
+      }
+      return node.cloneNode(true);
+    }
+
+    async function generatePreview({ silent = false } = {}) {
+      const requestId = ++previewRequestId;
+
+      await ensureLibraries();
+
+      const type = elements.codeType.value;
+      const content = elements.contentInput.value.trim();
+      const fileName = sanitizeFileName(elements.fileName.value);
+
+      if (!content) {
+        throw new Error("Please enter content first.");
+      }
+
+      const render = await renderCode({
+        type,
+        content,
+        size: Number(elements.size.value),
+        foreground: elements.foreground.value,
+        background: elements.background.value,
+        margin: Number(elements.margin.value),
+        barWidth: Number(elements.barWidth.value),
+        showText: elements.showText.checked
+      });
+
+      if (requestId !== previewRequestId) {
+        return;
+      }
+
+      elements.previewArt.innerHTML = "";
+      elements.previewArt.appendChild(render.node);
+      elements.previewMeta.innerHTML = `
+        <h3>Current Output</h3>
+        <p><strong>Type:</strong> ${type === "qr" ? "QR Code" : type}</p>
+        <p><strong>File:</strong> ${fileName}.png</p>
+        <p><strong>Content:</strong> ${content.slice(0, 140)}${content.length > 140 ? "..." : ""}</p>
+      `;
+
+      currentRender = {
+        ...render,
+        fileName,
+        type,
+        content
+      };
+
+      if (!silent) {
+        setStatus("Preview ready. You can save it now.");
+      }
+    }
+
+    function schedulePreviewRefresh() {
+      clearTimeout(previewRefreshTimer);
+      setPreviewLoading("Refreshing preview...");
+
+      previewRefreshTimer = setTimeout(async () => {
+        try {
+          await generatePreview({ silent: true });
+          setStatus("Preview updated automatically.");
+        } catch (error) {
+          setStatus(error.message || "Unable to refresh preview.", true);
+        }
+      }, 180);
+    }
+
+    function downloadDataUrl(dataUrl, fileName) {
+      const anchor = document.createElement("a");
+      anchor.href = dataUrl;
+      anchor.download = fileName;
+      anchor.click();
+    }
+
+    elements.generateBtn.addEventListener("click", async () => {
+      try {
+        await generatePreview();
+      } catch (error) {
+        setStatus(error.message || "Unable to generate preview.", true);
+      }
+    });
+
+    elements.downloadBtn.addEventListener("click", async () => {
+      try {
+        if (!currentRender) {
+          await generatePreview();
+        }
+        downloadDataUrl(currentRender.dataUrl, `${currentRender.fileName}.png`);
+        setStatus("PNG saved.");
+      } catch (error) {
+        setStatus(error.message || "Unable to save file.", true);
+      }
+    });
+
+    elements.codeType.addEventListener("change", () => {
+      const isQr = elements.codeType.value === "qr";
+      elements.showText.disabled = isQr;
+      elements.barWidth.disabled = isQr;
+      syncShowTextLabel();
+      elements.contentInput.placeholder = isQr
+        ? "Enter any text, link, number, or product code"
+        : "Enter barcode-safe content for the selected format";
+      schedulePreviewRefresh();
+    });
+
+    [
+      elements.fileName,
+      elements.contentInput,
+      elements.foreground,
+      elements.background,
+      elements.size,
+      elements.margin,
+      elements.barWidth,
+      elements.showText
+    ].forEach((element) => {
+      element.addEventListener("input", schedulePreviewRefresh);
+      element.addEventListener("change", schedulePreviewRefresh);
+    });
+
+    elements.showText.addEventListener("input", syncShowTextLabel);
+    elements.showText.addEventListener("change", syncShowTextLabel);
+
+    async function initializeApp() {
+      const isQr = elements.codeType.value === "qr";
+      elements.showText.disabled = isQr;
+      elements.barWidth.disabled = isQr;
+      syncShowTextLabel();
+      setPreviewPlaceholder("Loading preview...");
+
+      try {
+        await generatePreview();
+      } catch (error) {
+        setPreviewPlaceholder("Preview unavailable right now. Try clicking Generate Preview after the page finishes loading.");
+        setStatus(error.message || "Initial preview failed.", true);
+      }
+    }
+
+    initializeApp();
+  </script>
+</body>
+</html>
